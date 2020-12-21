@@ -58,7 +58,7 @@ if (video.textTracks) {
     for (let i = 0; i < video.textTracks.length; i++) {
         subtitlesMenu.appendChild(createMenuItem('subtitles-' + video.textTracks[i].language, video.textTracks[i].language, video.textTracks[i].label));
     }
-    videoContainer.appendChild(subtitlesMenu);
+    video.appendChild(subtitlesMenu);
 }
 // declare the functions we will use in our event listeners.
 function playPause() {
