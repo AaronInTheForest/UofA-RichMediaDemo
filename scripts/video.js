@@ -1,5 +1,6 @@
 // https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Adding_captions_and_subtitles_to_HTML5_video
 // get the video element and our buttons
+const videoContainer = document.querySelector('figure');
 const video = document.querySelector('video');
 const subtitles = document.querySelector('#subtitles');
 const playPauseButton = document.querySelector('#playpause');
@@ -58,7 +59,7 @@ if (video.textTracks) {
     for (let i = 0; i < video.textTracks.length; i++) {
         subtitlesMenu.appendChild(createMenuItem('subtitles-' + video.textTracks[i].language, video.textTracks[i].language, video.textTracks[i].label));
     }
-    video.appendChild(subtitlesMenu);
+    videoContainer.appendChild(subtitlesMenu);
 }
 // declare the functions we will use in our event listeners.
 function playPause() {
