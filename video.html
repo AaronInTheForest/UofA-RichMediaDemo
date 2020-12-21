@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rich Media for the Web</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/university-of-alberta.css">
+
+    <script src="./scripts/video.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <a href="./index.html">
+            <h1>Rich Media for the Web</h1>
+        </a>
+        <h2>Video</h2>
+    </header>
+    <main>
+        <h2>Controlling Video with JavaScript</h2>
+        <figure>
+            <video controls preload autoplay>
+                <!-- .mov files need to use video/mov -->
+                <source src="./media/video/Earth.mov" type="video/mp4">
+                <track default src="./media/video/hello-world.vtt" label="English/French" kind="subtitles">Dude - try http req to github's raw version of this file. Also - use github. Look at the mess you've made.
+                Your browser does not support the video tag.
+            </video>
+            <figcaption></figcaption>
+        </figure>
+        <div id="video-controls" class="controls" data-state="hidden">
+            <button id="playpause" type="button" data-state="play">Play/Pause</button>
+            <button id="stop" type="button" data-state="stop">Stop</button>
+            <div class="progress">
+                <progress id="progress" value="0" min="0">
+                    <span id="progress-bar"></span>
+                </progress>
+            </div>
+            <button id="mute" type="button" data-state="mute">Mute/Unmute</button>
+            <button id="volinc" type="button" data-state="volup">Vol+</button>
+            <button id="voldec" type="button" data-state="voldown">Vol-</button>
+            <button id="fs" type="button" data-state="go-fullscreen">Fullscreen</button>
+            <button id="subtitles" type="button" data-state="subtitles">CC</button>
+            <button id="small">Small</button>
+            <button id="normal">Normal</button>
+            <button id="big">Big</button>
+        </div>
+
+        <p>Video is a little easier to control with JavaScript. You can use the default controls or create your own controls to match the branding on your website. To control the size of the video we just set a value for the video's width using CSS.</p>
+        <p>The &lt;video&gt; tag does support autoplay but most browsers have opted out of the feature and instead will try to evaluate the trustworthiness of your site before allowing autoplay to function.</p>
+    </main>
+</body>
+
+</html>
+<!-- video source found here -->
+<!-- https://www.videvo.net/video/earth-zoom-in/2747/ -->
