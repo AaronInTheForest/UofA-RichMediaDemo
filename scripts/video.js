@@ -15,16 +15,7 @@ for (let i = 0; i < video.textTracks.length; i++) {
 
 // build our caption menu
 let subtitlesMenu;
-if (video.textTracks) {
-    let df = document.createDocumentFragment();
-    let subtitlesMenu = df.appendChild(document.createElement('ul'));
-    subtitlesMenu.className = 'subtitles-menu';
-    subtitlesMenu.appendChild(createMenuItem('subtitles-off', '', 'Off'));
-    for (let i = 0; i < video.textTracks.length; i++) {
-        subtitlesMenu.appendChild(createMenuItem('subtitles-' + video.textTracks[i].language, video.textTracks[i].language, video.textTracks[i].label));
-    }
-    videoContainer.appendChild(subtitlesMenu);
-}
+
 
 let subtitleMenuButtons = [];
 let createMenuItem = function(id, lang, label) {
@@ -59,6 +50,16 @@ let createMenuItem = function(id, lang, label) {
    return listItem;
 }
 
+if (video.textTracks) {
+    let df = document.createDocumentFragment();
+    let subtitlesMenu = df.appendChild(document.createElement('ul'));
+    subtitlesMenu.className = 'subtitles-menu';
+    subtitlesMenu.appendChild(createMenuItem('subtitles-off', '', 'Off'));
+    for (let i = 0; i < video.textTracks.length; i++) {
+        subtitlesMenu.appendChild(createMenuItem('subtitles-' + video.textTracks[i].language, video.textTracks[i].language, video.textTracks[i].label));
+    }
+    videoContainer.appendChild(subtitlesMenu);
+}
 // declare the functions we will use in our event listeners.
 function playPause() {
     if (video.paused)
