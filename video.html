@@ -20,25 +20,22 @@
     </header>
     <main>
         <h2>Controlling Video with JavaScript</h2>
-        <figure>
-            <video controls preload autoplay crossorigin="use-credentials">
-                <!-- .mov files need to use video/mov -->
-                <source src="./media/video/Earth.mov" type="video/mp4">
-                <track default src="./media/video/hello-world.vtt" label="English/French" kind="subtitles">
-                <track default src="./media/video/hello-world-en.vtt" label="English" kind="subtitles">
-                <track default src="./media/video/hello-world-fr.vtt" label="French" kind="subtitles">
-                Your browser does not support the video tag.
-            </video>
-            <figcaption></figcaption>
-        </figure>
-        <div id="video-controls" class="controls" data-state="hidden">
-            <button id="playpause" type="button" data-state="play">Play/Pause</button>
-            <button id="small">Small</button>
-            <button id="normal">Normal</button>
-            <button id="big">Big</button>
-        </div>
+        <video controls preload controlslist="nodownload">
+            <source src="./media/video/Earth.mov" type="video/mp4">
+            <track default src="./media/video/hello-world.vtt" label="English/French" kind="subtitles">
+            Your browser does not support the video tag.
+        </video>
+        <button id="playpause" type="button" data-state="play">Play/Pause</button>
+        <button id="small">Small</button>
+        <button id="normal">Normal</button>
+        <button id="big">Big</button>
+        <button id="faster">Faster</button>
+        <button id="slower">Slower</button>
 
-        <p>Video is a little easier to control with JavaScript. You can use the default controls or create your own controls to match the branding on your website. To control the size of the video we just set a value for the video's width using CSS.</p>
+        <track default src="./media/video/hello-world-en.vtt" label="English" kind="subtitles">
+        <track default src="./media/video/hello-world-fr.vtt" label="French" kind="subtitles">
+
+        <p>Video is easy to control with JavaScript. You can use the default controls on the &lt;video&gt; tag or create your own controls to match the branding on your website. To control the size of the video we just set a value for the video's width using CSS.</p>
         <p>The &lt;video&gt; tag does support autoplay but most browsers have opted out of the feature and instead will try to evaluate the trustworthiness of your site before allowing autoplay to function.</p>
     </main>
 </body>
