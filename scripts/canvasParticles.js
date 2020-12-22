@@ -47,8 +47,8 @@ function getMousePos(canvas, evt) {
     y = evt.clientY - rect.top;
 }
 
-canvas.addEventListener("mousedown", draw);
-canvas.addEventListener("mouseup", stopDraw);
+document.addEventListener("mousedown", draw);
+document.addEventListener("mouseup", stopDraw);
 canvas.addEventListener('mousemove', e => {
     getMousePos(canvas, e);
     drawCircle();
